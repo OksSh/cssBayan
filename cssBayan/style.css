@@ -28,22 +28,6 @@ body {
   transition: color 5ms auto;
 }
 
-.bayan__title:hover ~ .bayan__meme {
-  display: block;
-  animation-name: display;
-  animation-duration: 1.5s;
-  animation-fill-mode: both;
-}
-
-@keyframes display {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100;
-  }
-}
-
 .bayan__input {
   appearance: none;
   position: absolute;
@@ -55,12 +39,29 @@ body {
   display: none;
 }
 
-.bayan__input:checked ~ .bayan__meme {
-  display: block;
-}
-
 .bayan__input:checked ~ .bayan__title {
   color: #000000;
+}
+
+.bayan__title:hover ~ .bayan__meme {
+  display: block;
+  animation-name: display_block;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes display_block {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+.bayan__input:checked ~ .bayan__meme {
+  display: block;
+  opacity: 100;
 }
 
 @media (min-width: 320px) {
